@@ -12,3 +12,10 @@ class Library:
     def view_books(self):
         """View all books in the library."""
         return self.books  # Simply return the books dictionary
+    
+    def borrow_book(self, book_id):
+        """Borrow a book from the library if available."""
+        if book_id in self.books and self.books[book_id][2] > 0:
+            self.books[book_id][2] -= 1  # Decrease available copies by 1
+        else:
+            "Book is not available in library"
