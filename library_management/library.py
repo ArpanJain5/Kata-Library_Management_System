@@ -19,3 +19,8 @@ class Library:
             self.books[book_id][2] -= 1  # Decrease available copies by 1
         else:
             "Book is not available in library"
+
+    def return_book(self, book_id):
+        """Return a borrowed book to the library."""
+        if book_id in self.books:
+            self.books[book_id][2] += 1  # Increase available copies by 1
